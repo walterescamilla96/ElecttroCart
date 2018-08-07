@@ -67,18 +67,6 @@ router.get('/login', function (req, res, next) {
 router.get('/logout', function (req, res) {
   delete req.session.usertype;
   delete req.session.userid;
-  
-    $(window).bind('beforeunload', function () {
-        deleteAllCookies();
-    });
-    function deleteAllCookies() {
-        var cookies = document.cookie.split(";");
-        for (var i = 0; i < cookies.length; i++) {
-            var expires = new Date();
-            expires.setUTCFullYear(expires.getUTCFullYear() - 1);
-            document.cookie = cookies[i] + '; expires=' + expires.toUTCString() + '; path=/';
-        }
-    }
   res.redirect('/login');
 });
 
