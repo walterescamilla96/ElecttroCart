@@ -1,4 +1,4 @@
-<%- include layouts/header.ejs %>
+﻿<%- include layouts/header.ejs %>
 
 <style>
     .slideInDown {
@@ -69,7 +69,7 @@
 
                                     <% if ( documentos[i].existencia > 0 ) { %>
                                     <p class="text-center buttons">
-                                        <a href="/AgregarAlCarro/<%= documentos[i].productoID %>" class="btn" style="background-color: black; color: white;"><i class="fa fa-shopping-cart"></i>Agregar al carro</a> 
+                                        <a href="/AgregarAlCarro/<%= documentos[i].ID %>" class="btn" style="background-color: black; color: white;"><i class="fa fa-shopping-cart"></i>Agregar al carro</a> 
                                     </p>
         
                                     <% } %>
