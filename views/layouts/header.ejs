@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Manuales digitales de programación</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100' rel='stylesheet' type='text/css'>
+
+    <!-- styles -->
+    <link href="/stylesheets/font-awesome.css" rel="stylesheet">
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="/stylesheets/animate.min.css" rel="stylesheet">
+    <link href="/stylesheets/owl.carousel.css" rel="stylesheet">
+    <link href="/stylesheets/owl.theme.css" rel="stylesheet">
+
+    <!-- theme stylesheet -->
+    <link href="/stylesheets/style.default.css" rel="stylesheet" id="theme-stylesheet">
+
+    <!-- your stylesheet with modifications -->
+    <link href="/stylesheets/custom.css" rel="stylesheet">
+
+    <script src="/javascripts/respond.min.js"></script>
+
+    <script src="/https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    
+
+</head>
+<body>
+
+    <!-- *** NAVBAR ***
+ _________________________________________________________ -->
+
+ <div id="copyright" style="background-color: black">
+    <div class="container">
+
+    </div>
+</div>
+
+ <div class="navbar navbar-default yamm" role="navigation" id="navbar" style="background-color: black">
+    <div class="container">
+        <div class="navbar-header">
+
+            <a class="" data-animate-hover="bounce">
+                <img src="/images/logo.png" alt="Obaju logo" class="hidden-xs">
+                <img src="/images/logo-small.png" alt="Obaju logo" class="visible-xs"><span class="sr-only">Manuales digitales de programación</span>
+            </a>
+            <div class="navbar-buttons">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
+                    <span class="sr-only">Toggle navigation</span>
+                    <i class="fa fa-align-justify"></i>
+                </button>
+
+                <a class="btn btn-default navbar-toggle" href="/RecuperarCarro">
+                    <i class="fa fa-shopping-cart"></i>  <span class="hidden-xs"></span>
+                </a>
+            </div>
+        </div>
+        <!--/.navbar-header -->
+
+        <div class="navbar-collapse collapse" id="navigation">
+
+            <ul class="nav navbar-nav navbar-left" style="margin-left: 150px;">
+                <li class="inactive"><a href="/" style="color: white">Inicio</a>
+                </li>
+                <li class="inactive"><a href="/productos" style="color: white">Productos</a>
+                </li>
+                <li class="inactive"><a href="/acercade" style="color: white">Acerca de</a>
+                </li>
+                <!--<li class="inactive"><a href="/RecuperarCarro" style="color: white">Carrito de compras</a>
+                </li>-->
+                <li class="inactive"><a href="/login" style="color: white">Login</a>
+                </li>
+            </ul>
+
+        </div>
+        <!--/.nav-collapse -->
+
+        <div class="navbar-buttons">
+
+            <div class="navbar-collapse collapse right" id="basket-overview">
+                <!--<a href="/RecuperarCarro" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm"></span></a>-->
+
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal">
+                    <input type="hidden" name="cmd" value="_cart" />
+                    <input type="hidden" name="display" value="1">
+                    <input type="hidden" name="business" value="cyberdrache@gmail.com" />
+                    <input type="hidden" name="shopping_url" value="http://cyberdrache.us-3.evennode.com/productos" />
+                    
+                    <!--<input type="submit" value="Carrito de Compras" class="btn btn-primary navbar-btn" name="submit" alt="Make payments with PayPal - it's fast, free and secure!" />-->
+                </form>
+
+                <!--<a href="javascript:paypal.minicart.view.show()" class="btn btn-primary navbar-btn" role="button" onclick="paypal.minicart.view.show()"><i class="fa fa-shopping-cart"></i><span class="hidden-sm"></span></a>-->
+                <a href="/RecuperarCarro" class="btn navbar-btn" role="button" style="background-color: black" ><i class="fa fa-shopping-cart" style="background-color: black; color: white"></i><span class="hidden-sm"></span></a>
+                
+            </div>
+            <!--/.nav-collapse -->
+
+
+        </div>
+
+        <!--/.nav-collapse -->
+
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /#navbar -->
+
+<!-- *** NAVBAR END *** -->

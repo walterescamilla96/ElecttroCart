@@ -1,0 +1,121 @@
+<%- include layouts/header.ejs %>
+
+<style>
+     .slideInLeft {
+  -webkit-animation-name: slideInLeft;
+  animation-name: slideInLeft;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  }
+  @-webkit-keyframes slideInLeft {
+  0% {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  visibility: visible;
+  }
+  100% {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  }
+  }
+  @keyframes slideInLeft {
+  0% {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  visibility: visible;
+  }
+  100% {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  }
+  } 
+</style>
+
+    <div id="all">
+
+        <div id="content">
+            <div class="container">
+
+                <div class="col-md-12">
+                    <h2 class="text-center slideInLeft" style="color: black">Lista de Productos</h2>
+                </div>
+
+
+
+                <div class="col-md-12">
+
+
+
+                    <% for( var i = 0; i < documentos.length; i++) { %>
+                <div class="container">
+                    
+                     <div class="row products">
+                        <div class="product-slider">
+                            <div class="col-md-12 col-sm-4">
+
+                                        <div class="card" style="width: 18rem;">
+                                    
+                                                <img class="card-img-top" src="imagesProductos/<%= documentos[i].imagen %>" alt="Card image cap" height="150px" width="auto">
+                                                
+                                                <div class="card-body" style="background-color: white; width: 124%;">
+                                                  <h5 class="card-title text-center">Título: <%= documentos[i].nombre %></h5>
+                                                  <p class="card-text text-center">Descripción: <%= documentos[i].descripcion %></p>
+                                                  <p class="card-text text-center" class="price">Precio: $<%= documentos[i].precio %></p>
+                                                  <p class="card-text text-center">Stock: <%= documentos[i].existencia %></p>
+                                                  <p class="card-text text-center">Autor: <%= documentos[i].autor %></p>
+                                                  <p class="card-text text-center">Tecnología: <%= documentos[i].tecnologia %></p>
+                                                  <!--<p class="card-text text-center" class="price">Vendidos: <%= documentos[i].vendidos %></p>-->
+                                                  <a href="/detalleProducto/<%= documentos[i].productoID %>" class="btn" style="background-color: black; color: white; margin-left: 60px;">Ver detalles</a>                               
+                                                </div>
+                                        </div>
+
+                                            <p class="buttons">
+                                        
+                                            
+                                            <% if ( documentos[i].existencia > 0 ) { %>
+                                                <br>
+                                            <a href="/AgregarAlCarro/<%= documentos[i].ID %>" class="btn" style="background-color: black; color: white"><i class="fa fa-shopping-cart" style="color: white"></i>Agregar producto al Carrito</a>
+                                            <% } %>
+
+                                            <!--<form action="https://sandbox.paypal.com/cgi-bin/webscr" method="post">
+                                                <input type="hidden" name="cmd" value="_xclick">
+                                                <input type="hidden" name="business" value="electroshop@hotmail.com">
+                                                <input type="hidden" name="currency_code" value="MXN" />
+                                                <input type="hidden" name="item_name" value="<%= documentos[i].nombre %>" />
+                                                <input type="hidden" name="amount" value="<%= documentos[i].precio %>" />
+                                                <input type="submit" value="Comprar" class="btn text-center producto" style="background-color: black; color: white; margin-left: 70px;" />
+                                                <input type="hidden" name="return" value="https://electtroshop.herokuapp.com/productos">
+                                                <input type="hidden" name="cancel_return" value="https://electtroshop.herokuapp.com/">
+                                            </form>-->
+
+                                            </p>
+
+
+                                    </div>
+                                    <!-- /.text -->
+
+                                <!-- /.product -->
+                            
+                            </div>
+                        </div>
+                        </div>
+
+
+                        <% } %>
+
+                    
+
+                </div>
+
+            </div>
+
+
+
+        
+        
+
+        
+        
+<%- include layouts/footer.ejs %>

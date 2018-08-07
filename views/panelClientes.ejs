@@ -1,0 +1,60 @@
+<%- include layouts/adminheader.ejs %>
+<%- include layouts/adminsidebar.ejs %>
+
+
+<main class="app-content">
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="tile" style="background-color: gray">
+          <section class="invoice">
+            <div class="row mb-4">
+              <div class="col-12">
+                <h2 class="page-header text-center"><i class=""></i> Clientes</h2>
+              </div>
+            </div>
+            <div class="col-12">
+
+              
+              </div>
+
+                  <br />
+                  
+            <div class="row">
+              <div class="col-12 table-responsive">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th style="background-color: black; color: white;">Nombre</th>
+                      <th style="background-color: black; color: white;">Apellidos</th>
+                      <th style="background-color: black; color: white;">Correo</th>
+                      <th style="background-color: black; color: white;">Fecha de Compra</th>
+                      <!--<th style="background-color: black; color: white;">Teléfono</th>
+                      <th style="background-color: black; color: white;">Dirección</th>-->
+                    </tr>
+                  </thead>
+                  <tbody>
+                        <% for (var i = 0; i < documentos.length; i++) { %>
+                            <tr>
+                              <td><%= documentos[i].nombre %></td>
+                              <td><%= documentos[i].apellido %></td>
+                              <td><%= documentos[i].correo %></td>
+                              <td><%= documentos[i].fecha %></td>
+                              <!--<td><%= documentos[i].telefono %></td>
+                              <td><%= documentos[i].direccion %></td>-->
+                            </tr>
+                            <hidden name="idProd" value="<%= documentos[i].id %>"></hidden>    
+                        <% } %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+<%- include layouts/adminfooter.ejs %>

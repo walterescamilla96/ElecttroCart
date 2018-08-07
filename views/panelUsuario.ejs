@@ -1,0 +1,101 @@
+<%- include layouts/header.ejs %>
+
+<div id="all">
+
+        <div id="content">
+            <div class="container">
+
+                <div class="col-md-12 text-center">
+
+                        <h2>Sección para nuestros clientes</h2>
+                    
+
+                </div>
+
+                <div class="col-md-6">
+                    <!-- *** CUSTOMER MENU ***
+ _________________________________________________________ -->
+                    <div class="panel panel-default sidebar-menu">
+
+                        <div class="panel-heading" style="background-color: black; color: white;">
+                            <h3 class="panel-title text-center">Opciones</h3>
+                        </div>
+
+                        <div class="panel-body" style="background-color: gray;">
+
+                            <ul class="nav nav-pills nav-stacked">
+                                <li>
+                                    <a href="/panelUsuario" style="color: white;"><i class=""></i>Mis productos adquiridos</a>
+                                </li>
+                                <li>
+                                    <a href="/RecuperarCarro" style="color: white"><i class=""></i>Mi carrito de compras</a>
+                                </li>
+                                <li>
+                                    <a href="/logout" style="color: white"><i class=""></i>Salir</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <!-- /.col-md-3 -->
+
+                    <!-- *** CUSTOMER MENU END *** -->
+                </div>
+
+                <div class="col-md-6" id="customer-orders">
+                    <div class="panel panel-default sidebar-menu" style="background-color: black; color: white;">
+                        <div class="panel-heading" style="background-color: black; color: white;">
+                            <h3 class="panel-title text-center">Libros comprados</h3>
+                        </div>
+                        
+                        <div class="panel-body" style="background-color: gray;">
+                        
+                    
+
+                        <br>
+
+                        <% if (documentos.length == 0){ %>
+
+                            <p>Usted no tiene productos comprados</p>
+
+                            <% }else{ %>
+
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th colspan="3">Producto</th>
+                                        <th>Enlace</th>
+                                        <th>Fecha de compra</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                        <% for (var i = 0; i < documentos.length; i++) { %>
+                                    <tr>
+                                        <td><img src="/imagesProductos/<%= documentos[i].imagen %>" height="60" width="auto" alt=""></td>
+                                        <td><%= documentos[i].producto %></td>
+                                        <td></td>
+                                        <td><a href="/archivosProductos/<%= documentos[i].archivo %>" download><%= documentos[i].archivo %></a></td>
+                                        <td><%= documentos[i].fecha %></td>
+                                    </tr>
+
+                                    <% } %>
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                        <% } %>
+
+                    </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /#content -->
+		
+		
+
+<%- include layouts/footer.ejs %>

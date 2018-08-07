@@ -1,0 +1,133 @@
+<%- include layouts/header.ejs %>
+
+<style>
+    .slideInDown {
+  -webkit-animation-name: slideInDown;
+  animation-name: slideInDown;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  }
+  @-webkit-keyframes slideInDown {
+  0% {
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  visibility: visible;
+  }
+  100% {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  }
+  }
+  @keyframes slideInDown {
+  0% {
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  visibility: visible;
+  }
+  100% {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  }
+  } 
+
+  .slideInLeft {
+  -webkit-animation-name: slideInLeft;
+  animation-name: slideInLeft;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  }
+  @-webkit-keyframes slideInLeft {
+  0% {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  visibility: visible;
+  }
+  100% {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  }
+  }
+  @keyframes slideInLeft {
+  0% {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  visibility: visible;
+  }
+  100% {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  }
+  } 
+
+</style>
+
+    <div id="all">
+
+        <div id="content">
+
+            <div id="hot">
+
+                <div class="text-center slideInDown">
+                    <h3>Tienda: Manuales digitales de programación</h3>
+                </div>
+                    <div class="container">
+                        <div class="col-md-12">
+                            <h1 class="slideInLeft text-center">Top nuestros productos más vendidos</h2>
+                        </div>
+                    </div>
+                    <hr>
+                <div class="container">
+                        <div class="product-slider">
+
+                            <% for( var i = 0; i < documentos.length; i++) { %>
+
+                                
+                                <div class="card" style="width: 18rem;">
+                                    
+                                    <img class="card-img-top" src="imagesProductos/<%= documentos[i].imagen %>" alt="Card image cap" height="150px" width="auto">
+                                    
+                                    <div class="card-body" style="background-color: white; width: 124%;">
+                                      <h5 class="card-title text-center">Título: <%= documentos[i].nombre %></h5>
+                                      <p class="card-text text-center">Descripción: <%= documentos[i].descripcion %></p>
+                                      <p class="card-text text-center" class="price">Precio: $<%= documentos[i].precio %></p>
+                                      <p class="card-text text-center">Stock: <%= documentos[i].existencia %></p>
+                                      <p class="card-text text-center">Autor: <%= documentos[i].autor %></p>
+                                      <p class="card-text text-center">Tecnología: <%= documentos[i].tecnologia %></p>
+                                      <p class="card-text text-center" class="price">Vendidos: <%= documentos[i].vendidos %></p>                
+                                    </div>
+                                </div>
+
+                                <% } %>
+
+
+
+                                    <!-- /.col-md-4 -->
+
+
+                        </div>
+                        <!-- /.product-slider -->
+
+                </div>
+                <!-- /.container -->
+
+            </div>
+            <!-- /#hot -->
+
+            <!-- *** HOT END *** -->
+
+
+        </div>
+    </div>
+    <!-- /.container -->
+
+    <!-- *** BLOG HOMEPAGE END *** -->
+
+
+    </div>
+
+
+    <%- include layouts/footer.ejs %>

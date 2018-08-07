@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Administrador</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/mainadmin.css">
+    <!-- Font-icon css-->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<style>
+     .slideInLeft {
+  -webkit-animation-name: slideInLeft;
+  animation-name: slideInLeft;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  }
+  @-webkit-keyframes slideInLeft {
+  0% {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  visibility: visible;
+  }
+  100% {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  }
+  }
+  @keyframes slideInLeft {
+  0% {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  visibility: visible;
+  }
+  100% {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  }
+  } 
+</style>
+
+<body class="app sidebar-mini rtl">
+    <!-- Navbar-->
+    <header class="app-header slideInLeft" style="background-color: black; color: white;"><a class="app-header__logo" href="/" style="background-color: black; color: white; font-family: Arial, Helvetica, sans-serif; font-size: 12px;">Manuales Digitales de Programación</a>
+        <!-- Navbar Right Menu-->
+        <ul class="app-nav" style="background-color: black; color: white;">
+
+
+          <!-- User Menu-->
+          <li class="dropdown"><a class="app-nav__item" href="/logout"  aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i>Salir</a>
+
+          </li>
+        </ul>
+      </header>

@@ -1,0 +1,84 @@
+<style>
+    .slideInLeft {
+-webkit-animation-name: slideInLeft;
+animation-name: slideInLeft;
+-webkit-animation-duration: 1s;
+animation-duration: 1s;
+-webkit-animation-fill-mode: both;
+animation-fill-mode: both;
+}
+@-webkit-keyframes slideInLeft {
+0% {
+-webkit-transform: translateX(-100%);
+transform: translateX(-100%);
+visibility: visible;
+}
+100% {
+-webkit-transform: translateX(0);
+transform: translateX(0);
+}
+}
+@keyframes slideInLeft {
+0% {
+-webkit-transform: translateX(-100%);
+transform: translateX(-100%);
+visibility: visible;
+}
+100% {
+-webkit-transform: translateX(0);
+transform: translateX(0);
+}
+} 
+</style>
+
+<div id="all">
+
+<div id="content">
+    <div class="container">
+
+        <div class="col-md-12">
+            <ul class="breadcrumb">
+                <li><a href="/">Inicio</a>
+                </li>
+                <li>Productos</li>
+            </ul>
+        </div>
+
+        <div class="col-md-3">
+            <!-- *** MENUS AND FILTERS ***
+_________________________________________________________ -->
+            <div class="panel panel-default sidebar-menu">
+
+                <div class="panel-heading">
+                    <h3 class="panel-title">Tecnologías</h3>
+                </div>
+
+                <div class="panel-body">
+                    <ul class="nav nav-pills nav-stacked category-menu">
+                        <li>
+                            <ul>
+                                <% for (var i = 0; i < tecnologias.length; i++) { %>
+                                <li><%= tecnologias[i].nombre %></li>
+                                <% } %>
+
+                            </ul>
+                        </li>
+                        
+
+                    </ul>
+
+                </div>
+            </div>
+
+            
+
+            <!-- *** MENUS AND FILTERS END *** -->
+
+
+        </div>
+
+        <div class="col-md-9">
+            <div class="box">
+                <h1>Nombre de Tecnología</h1>
+                <p>Descripción de Tecnología</p>
+            </div>

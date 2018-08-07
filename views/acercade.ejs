@@ -1,0 +1,88 @@
+<%- include layouts/header.ejs %>
+
+<style>
+    .slideInDown {
+  -webkit-animation-name: slideInDown;
+  animation-name: slideInDown;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  }
+  @-webkit-keyframes slideInDown {
+  0% {
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  visibility: visible;
+  }
+  100% {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  }
+  }
+  @keyframes slideInDown {
+  0% {
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  visibility: visible;
+  }
+  100% {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  }
+  } 
+  .slideInLeft {
+  -webkit-animation-name: slideInLeft;
+  animation-name: slideInLeft;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  }
+  @-webkit-keyframes slideInLeft {
+  0% {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  visibility: visible;
+  }
+  100% {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  }
+  }
+  @keyframes slideInLeft {
+  0% {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  visibility: visible;
+  }
+  100% {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  }
+  } 
+</style>
+
+<div id="all">
+
+    <div id="content">
+        <div class="container">
+
+        <div class="col-sm-12" id="blog-listing">
+
+            <div>
+                <h3 class="slideInLeft">Acerca De Nosotros</h3>
+            </div>
+
+            <div class="slideInDown">
+                <h2><p>¿Quiénes somos?</p></h2>
+                <hr>
+                <p style="margin-left:15px;">Somos una empresa mexicana sólida dedicada a las ventas de manuales digitales de programación</p>
+                <p style="margin-left:15px;">nos dedicamos a la satisfacción de nuestros clientes ayudandolos con la instalación de sus programas</p>
+                <p style="margin-left:15px;">también contamos con manuales digitales de programación en JavaScript usando Node.js</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include layouts/footer.ejs %>

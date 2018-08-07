@@ -1,0 +1,147 @@
+<%- include layouts/adminheader.ejs %>
+    <%- include layouts/adminsidebar.ejs %>
+
+    
+
+
+        <script>
+        function validateForm() {
+
+            var a = document.forms["formulario"]["titulo"].value;
+            if (a == "") {
+
+                alert("Ingresa un Título válido");
+                return false;
+            }
+
+            var b = document.forms["formulario"]["descripcion"].value;
+            if (b == "") {
+                alert("Ingresa una Descripción válida");
+                return false;
+            }
+
+            var c = document.forms["formulario"]["imagen"].value;
+            if (!c) {
+                alert("Selecciona una imagen");
+                return false;
+            }
+
+            var d = document.forms["formulario"]["autor"].value;
+            if (d == "") {
+                alert("Ingresa un nombre de Autor válido");
+                return false;
+            }
+
+            var e = document.forms["formulario"]["tecnologia"].value;
+            if (e == "") {
+                alert("Ingresa un tipo de Tecnología válida");
+                return false;
+            }
+
+            var f = document.forms["formulario"]["precio"].value;
+            if (f == "" || isNaN(f)) {
+                alert("Ingresa un Precio válido");
+                return false;
+            }
+
+            var h = document.forms["formulario"]["archivo"].value;
+            if (!h) {
+                alert("Selecciona un Archivo a subir");
+                return false;
+            }
+
+            var g = document.forms["formulario"]["stock"].value;
+            if (g == "" || isNaN(g)) {
+                alert("Ingresa un número de Existencia válido");
+                return false;
+            }
+
+
+
+        }
+        </script>
+
+        <main class="app-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="tile" style="background-color: gray">
+                        <h3 class="tile-title text-center">Modificar Manual</h3>
+                        <div class="tile-body">
+                            <!--onsubmit="return validateForm()-->
+                            <form action="/panelEdit/<%= documentos.ID %>/<%= documentos.imagen %>/<%= documentos.archivo %>/<%= documentos.vendidos %>" method="post" name="formulario" enctype="multipart/form-data">
+                            <div class="col-md-12">
+                                <div class="row">
+                                <div class="form-group col-md-4">
+                                    <label class="control-label">Título</label>
+                                    <input class="form-control" type="text" value="<%= documentos.titulo %>"  name="titulo" id="titulo">
+                                </div>
+                                <div class="form-group col-md-4">
+                                        <label class="control-label">Descripción</label>
+                                        <textarea class="form-control"  rows="4" name="descripcion" id="descripcion"><%= documentos.descripcion %></textarea>
+                                </div>
+                                <div class="form-group col-md-4">
+                                            <label class="control-label">Selecciona la imagen del producto</label>
+                                            <input class="form-control" type="file" accept="image/jpeg, image/bmp, image/png" name="imagen" id="imagen">
+                                            <br/>
+                                            <span>Imagen actual</span>
+                                            <img src="/imagesProductos/<%= documentos.imagen %>" alt="Imagen" height="200px" width="auto">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="row">
+                            
+                                <div class="form-group col-md-4">
+                                    <label class="control-label">Autor</label>
+                                    <input class="form-control" type="text" value="<%= documentos.autor %>"  name="autor" id="autor">
+                                </div>
+                                
+                                <div class="form-group col-md-4">
+                                        <label class="control-label">Tecnología</label>
+                                        <input class="form-control" type="text" value="<%= documentos.tecnologia %>" name="tecnologia" id="tecnologia">
+                                </div>
+                                <div class="form-group col-md-4">
+                                        <label class="control-label">Precio</label>
+                                        <input class="form-control" type="text" value="<%= documentos.precio %>" name="precio" id="precio">
+                                </div>
+                            </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label class="control-label">Selecciona el archivo a cargar</label>
+                                    <input class="form-control" type="file" accept="application/pdf, application/zip" name="archivo" id="archivo">
+                                    <span><b>Archivo actual: <%= documentos.archivo %></b></span>
+                                </div>
+                                <div class="form-group col-md-6">
+                                        <label class="control-label">Stock</label>
+                                        <input class="form-control" type="text" value="<%= documentos.existencia %>"  name="stock" id="stock">
+                                </div>
+                            </div>
+                            </div>
+
+                                <input type="hidden" name="vendidos" value="<%= documentos.vendidos %>">
+
+                            
+                        </div>
+                        <div class="tile-footer">
+                            <div class="col-md-12">
+                                <div class="row">
+                            <button class="btn btn-block" type="submit" style="background-color: black; color: white">
+                                <i class=""></i>Guardar</button>&nbsp;&nbsp;&nbsp;
+                            <a class="btn btn-block" style="background-color: black; color: white" href="/panelProductos">
+                                <i class=""></i>Volver</a>
+                            </div>
+                            </div>
+                        </div>
+
+                    </form>
+                    </div>
+                </div>
+
+                <div class="col-md-6"><div class="tile-body"></div></div>
+
+            </div>
+
+        </main>
+
+        <%- include layouts/adminfooter.ejs %>

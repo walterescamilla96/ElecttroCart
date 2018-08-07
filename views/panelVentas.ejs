@@ -1,0 +1,57 @@
+<%- include layouts/adminheader.ejs %>
+<%- include layouts/adminsidebar.ejs %>
+
+<main class="app-content">
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="tile" style="background-color: gray">
+          <section class="invoice">
+            <div class="row mb-4">
+              <div class="col-12">
+                <h2 class="page-header text-center"><i></i>Ventas realizadas</h2>
+              </div>
+            </div>
+            <div class="col-12">
+
+              
+              </div>
+
+                  <br />
+                  
+            <div class="row">
+              <div class="col-12 table-responsive">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th style="background-color: black; color: white;">Cliente PayPal</th>
+                      <th style="background-color: black; color: white;">Transacción PayPal</th>
+                      <th style="background-color: black; color: white;">Nombre del cliente</th>
+                      <th style="background-color: black; color: white;">Producto adquirido</th>
+                      <th style="background-color: black; color: white;">fecha</th>
+                      <th style="background-color: black; color: white;">efectivo</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                        <% for (var i = 0; i < documentos.length; i++) { %>
+                            <tr>
+                              <td style="background-color: black; color: white;"><%= documentos[i].payerid %></td>
+                              <td style="background-color: black; color: white;"><%= documentos[i].paymentid %></td>
+                              <td style="background-color: black; color: white;"><%= documentos[i].cliente %></td>
+                              <td style="background-color: black; color: white;"><%= documentos[i].productos %></td>
+                              <td style="background-color: black; color: white;"><%= documentos[i].fecha %></td>
+                              <td style="background-color: black; color: white;">$<%= documentos[i].total %></td>
+                            </tr>
+                        <% } %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+<%- include layouts/adminfooter.ejs %>
