@@ -113,14 +113,14 @@ router.get('/RecuperarCarro', function (req, res, next) {
 
         if (resultados) {
 
-          db.query("SELECT user.ID as user, productos.ID as productoId, productos.titulo as producto, productos.imagen as imagen, productos.precio as precio, cart.ID as cart FROM productos INNER JOIN cartdetails ON productos.ID = cartdetails.producto INNER JOIN cart ON cart.ID = cartdetails.cart INNER JOIN user ON user.ID = cart.user WHERE user = " + req.session.userid + " GROUP BY  user,producto,cart", function (err, resultat) {
+          db.query("SELECT user.ID as user, productos.ID as productoId, productos.titulo as producto, productos.imagen as imagen, productos.precio as precio, cart.ID as cart FROM productos INNER JOIN cartdetails ON productos.ID = cartdetails.producto INNER JOIN cart ON cart.ID = cartdetails.cart INNER JOIN user ON user.ID = cart.user WHERE user = " + req.session.userid + " GROUP BY  producto,cart", function (err, resultat) {
             if (err) throw err;
             if (resultat) {
 
               console.log(resultat);
               console.log(resultat.length);
 
-              db.query("SELECT user.ID as user, productos.titulo as producto, productos.imagen as imagen, productos.precio as precio, SUM(precio) as total, cart.ID as cart FROM productos INNER JOIN cartdetails ON productos.ID = cartdetails.producto INNER JOIN cart ON cart.ID = cartdetails.cart INNER JOIN user ON user.ID = cart.user WHERE user = " + req.session.userid + " GROUP BY user,producto,cart", function (err, resTotal) {
+              db.query("SELECT user.ID as user, productos.titulo as producto, productos.imagen as imagen, productos.precio as precio, SUM(precio) as total, cart.ID as cart FROM productos INNER JOIN cartdetails ON productos.ID = cartdetails.producto INNER JOIN cart ON cart.ID = cartdetails.cart INNER JOIN user ON user.ID = cart.user WHERE user = " + req.session.userid + " GROUP BY producto,cart", function (err, resTotal) {
                 res.render('cart', { carrito: resultat, resTotal });
               });
 
@@ -142,14 +142,14 @@ router.get('/RecuperarCarro', function (req, res, next) {
           db.query("INSERT INTO cart SET ?", carro, function (err, res) {
             if (err) throw err;
 
-            db.query("SELECT user.ID as user, productos.titulo as producto, productos.imagen as imagen, productos.precio as precio, cart.ID as cart FROM productos INNER JOIN cartdetails ON productos.ID = cartdetails.producto INNER JOIN cart ON cart.ID = cartdetails.cart INNER JOIN user ON user.ID = cart.user WHERE user = " + req.session.userid + " GROUP BY producto", function (err, resultat) {
+            db.query("SELECT user.ID as user, productos.titulo as producto, productos.imagen as imagen, productos.precio as precio, cart.ID as cart FROM productos INNER JOIN cartdetails ON productos.ID = cartdetails.producto INNER JOIN cart ON cart.ID = cartdetails.cart INNER JOIN user ON user.ID = cart.user WHERE user = " + req.session.userid + " GROUP BY producto,cart", function (err, resultat) {
               if (err) throw err;
               if (resultat) {
 
                 console.log(resultat);
                 console.log(resultat.length);
 
-                db.query("SELECT user.ID as user, productos.titulo as producto, productos.imagen as imagen, productos.precio as precio, SUM(precio) as total, cart.ID as cart FROM productos INNER JOIN cartdetails ON productos.ID = cartdetails.producto INNER JOIN cart ON cart.ID = cartdetails.cart INNER JOIN user ON user.ID = cart.user WHERE user = " + req.session.userid + "", function (err, resTotal) {
+                db.query("SELECT user.ID as user, productos.titulo as producto, productos.imagen as imagen, productos.precio as precio, SUM(precio) as total, cart.ID as cart FROM productos INNER JOIN cartdetails ON productos.ID = cartdetails.producto INNER JOIN cart ON cart.ID = cartdetails.cart INNER JOIN user ON user.ID = cart.user WHERE user = " + req.session.userid + " GROUP BY producto,cart", function (err, resTotal) {
                   res.render('cart', { carrito: resultat, resTotal });
                 });
 
