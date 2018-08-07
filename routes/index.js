@@ -832,7 +832,7 @@ router.get('/pay/:carrito/:total', function (req, res) {
           "currency": "MXN",
           "total": req.params.total
         },
-        "description": "Productos originales Cyber Drache"
+        "description": "Manuales digitales de Programación"
       }]
     };
 
