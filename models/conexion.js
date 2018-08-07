@@ -15,13 +15,13 @@ if (port === 4205) {
 */
 
 //Conexion local
-var connection = mysql.createConnection(
+var connection = mysql.createPool(
     {
-        host:'localhost',
+        host:'db4free.net',
         port:3306,
-        user:'root',
-        password:'',
-        database:'carritonode',
+        user:'electtroadm',
+        password:'electtro2018',
+        database:'electtro',
         insecureAuth:true
     }
 );
